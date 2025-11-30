@@ -39,7 +39,8 @@ class Task {
     // image
     this.deleteImg = document.createElement("img");
     this.deleteImg.classList.add("task__img");
-    this.deleteImg.src = "../images/remove.svg";
+	const basePath = new URL('.', import.meta.url); 
+	this.deleteImg.src = new URL('../images/remove.svg', basePath).href;
     this.deleteImg.alt = "right arrow with cross";
     this.deleteBtn.appendChild(this.deleteImg);
   }
