@@ -8,7 +8,9 @@ class Header {
 
     this.img = document.createElement("img");
     this.img.className = "header__img";
-    this.img.src = "images/eisenhower-matrix.jpg";
+	const basePath = new URL('.', import.meta.url); 
+	this.img.src = new URL('../images/eisenhower-matrix.jpg', basePath).href;
+    // this.img.src = "images/eisenhower-matrix.jpg";
     this.img.alt = "Eisenhower Matrix Diagram"
 
     this.link = document.createElement("a");
