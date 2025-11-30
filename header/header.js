@@ -8,7 +8,7 @@ class Header {
 
     this.img = document.createElement("img");
     this.img.className = "header__img";
-    this.img.src = "/images/eisenhower-matrix.jpg";
+    this.img.src = "./images/eisenhower-matrix.jpg";
     this.img.alt = "Eisenhower Matrix Diagram"
 
     this.link = document.createElement("a");
