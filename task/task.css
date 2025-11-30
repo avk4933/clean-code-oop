@@ -1,0 +1,65 @@
+/* task.css */
+
+/* SPECIFIC */
+/* list-item        task__li */
+/* task-editing     task__li-edit*/
+/* checkbox         task__checkbox */
+/* task-label       task__label */
+/* task-edit-field  task__edit-field */
+/* input-text       task__input-text */
+/* task-edit-btn    task__edit-btn */
+/* task-delete-btn  task__delete-btn */
+/* image            task__img */
+/* task__completed-label   task__completed-label */
+
+/* Task general */
+.task__li {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task__li > * {
+  vertical-align: middle;
+}
+.task__li > .task__checkbox {
+  margin: 0 10px;
+}
+.task__li > .task-label {
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 226px;
+}
+.task__li > .task__input-text {
+  width: 226px;
+}
+.task__delete-btn .task__img {
+  height: 2em;
+  transform: rotatez(45deg);
+  transition: transform 200ms ease-in;
+}
+.task__delete-btn .task__img:hover {
+  transform: rotatez(0);
+}
+
+/* Edit Task */
+.task__edit-field {
+  display: none;
+}
+.task__li-edit .task__input-text {
+  display: inline-block;
+  width: 224px;
+}
+.task__li-edit .task-label {
+  display: none;
+}
+
+/* Completed Task*/
+.task__completed-label {
+  text-decoration: line-through;
+  color: #888;
+}
+

@@ -1,0 +1,19 @@
+/* task-input.css */
+
+/* SPECIFIC */
+
+/* task-input-label   task-input__label*/
+/* task-input-field   task-input__input*/
+/* input-row          task-input__row*/
+
+/* New Task */
+.task-input__label {
+  display: block;
+  margin: 0 0 20px;
+}
+.task-input__input {
+  width: 318px;
+}
+.task-input__row {
+  display: flex;
+}
