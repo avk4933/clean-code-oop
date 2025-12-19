@@ -2,7 +2,9 @@
 
 class TaskInput {
 
-  constructor () {
+  constructor (onAdd) {
+    // callback
+    this.onAdd = onAdd;
     // outer div
     this.element = document.createElement("div");
     this.element.id = "task-input-section";
@@ -25,15 +27,22 @@ class TaskInput {
     this.input.type = "text";
     this.innerDiv.appendChild(this.input);
     // button
-    this.button = document.createElement("button");
-    this.button.classList.add("shared__btn");
-    this.button.innerText = "Add";
-    this.innerDiv.appendChild(this.button);
+    this.addButton = document.createElement("button");
+    this.addButton.classList.add("shared__btn");
+    this.addButton.innerText = "Add";
+    this.innerDiv.appendChild(this.addButton);
+    this.addButton.addEventListener("click", this.addTask);
   }
 
   getElement() {
       return this.element;
     }
-}
+
+  addTask = () => {
+      if (!this.input.value) return;
+      this.onAdd(this.input.value.trim());
+      this.input.value = "";
+    }
+  }
 
 export { TaskInput };

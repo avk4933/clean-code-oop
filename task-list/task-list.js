@@ -4,21 +4,31 @@ import { Task } from "../task/task.js"
 
 class TaskList {
 
-  constructor(id) {
+  constructor(id, onMoveTask, onDeleteTask) {
     this.element = document.createElement("ul");
     this.element.id = id;
+    this.onMove = (task) => {
+      onMoveTask(task);
+    }
+    this.onDelete = (task) => {
+      onDeleteTask(task);
+    }
   }
 
   getElement() {
       return this.element;
     }
 
-  addTask(text, is_edit, is_completed) {
-    const newTask = new Task();
+  addTask(text, isEdit, isCompleted) {
+    const newTask = new Task(this.onMove, this.onDelete);
     newTask.setText(text);
-    if (is_edit) { newTask.setIsEditing() };
-    if (is_completed) { newTask.setIsCompleted() };
+    if (isEdit) { newTask.setIsEditing() };
+    if (isCompleted) { newTask.setIsCompleted() };
     this.element.appendChild(newTask.getElement());
+  }
+
+  removeTask(task) {
+    this.element.removeChild(task.getElement());
   }
 }
 

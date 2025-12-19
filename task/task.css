@@ -27,7 +27,7 @@
 .task__li > .task__checkbox {
   margin: 0 10px;
 }
-.task__li > .task-label {
+.task__li > .task__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
@@ -51,9 +51,9 @@
 }
 .task__li-edit .task__input-text {
   display: inline-block;
-  width: 224px;
+  width: 226px;
 }
-.task__li-edit .task-label {
+.task__li-edit .task__label {
   display: none;
 }
 
